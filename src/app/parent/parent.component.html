@@ -1,0 +1,74 @@
+<div *ngIf="registration">
+    <div>
+        <form (ngSubmit)="onSubmit(sampleForm)" #sampleForm="ngForm">
+            <div class="card">
+                <article style="max-width: 400px;">
+                    <br>
+                    <h1><b>Registration Form</b></h1>
+                    <p class="divider-text">
+                        <span>Register</span>
+                    </p>
+                    <div>
+                        Name: <input class="form-control" required [(ngModel)]="info.fullname" name="fullname" #fullname="ngModel"
+                            type="text">
+                    </div>
+                    <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)" class="alert alert-danger">
+                        <div *ngIf="fullname.errors.required">Name is required.</div>
+                    </div>
+                    <div>
+                        Email: <input class="form-control" [(ngModel)]="info.email" name=email #Email="ngModel" required
+                            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" type="email">
+                    </div>
+                    <div *ngIf="Email.invalid && (Email.dirty || Email.touched)" class="alert alert-danger">
+                        <div *ngIf="Email.errors.required">Email is required.</div>
+                        <div *ngIf="Email.errors?.pattern">Check your email.</div>
+                    </div>
+                    <div>
+                        Gender: <select required class="form-control" ngModel name="gender" #gender="ngModel" style="max-width: 120px;"
+                            [(ngModel)]="info.gender" required>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                        </select>
+                        <div *ngIf="gender.invalid && (gender.dirty || gender.touched)" class="alert alert-danger">
+                            <div *ngIf="gender.errors.required">Gender is required.</div>
+                        </div>
+                    </div>
+                    <h4>Address</h4>
+                    <div>
+                        Street: <input class="form-control" required [(ngModel)]="info.street" name="street" #street="ngModel"
+                            type="text">
+                    </div>
+                    <div *ngIf="street.invalid && (street.dirty || street.touched)" class="alert alert-danger">
+                        <div *ngIf="street.errors.required">Street is required.</div>
+                    </div>
+                    <div>
+                        City: <input class="form-control" required [(ngModel)]="info.city" name="city" #city="ngModel"
+                            type="text">
+                    </div>
+                    <div *ngIf="city.invalid && (city.dirty || city.touched)" class="alert alert-danger">
+                        <div *ngIf="city.errors.required">City is required.</div>
+                    </div>
+                    <div>
+                        State: <input class="form-control" required [(ngModel)]="info.state" name="state" #state="ngModel"
+                            type="text">
+                    </div>
+                    <div *ngIf="state.invalid && (state.dirty || state.touched)" class="alert alert-danger">
+                        <div *ngIf="state.errors.required">Street is required.</div>
+                    </div>
+                    <div>
+                        Zipcode: <input class="form-control" required [(ngModel)]="info.zipcode" name="zipcode" #zipcode="ngModel"
+                            type="number">
+                    </div>
+                    <div *ngIf="zipcode.invalid && (zipcode.dirty || zipcode.touched)" class="alert alert-danger">
+                        <div *ngIf="zipcode.errors.required">Zipcode is required.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block" [disabled]="!sampleForm.form.valid">
+                        Submit</button>
+                </article>
+            </div>
+        </form>
+    </div>
+</div>
+<div *ngIf="tableList">
+    <app-child [registered]="container" (display)="display()" (edit)="edit($event)"></app-child>
+</div>

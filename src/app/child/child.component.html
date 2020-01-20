@@ -1,0 +1,25 @@
+<div class="container">
+        <button id="addSection" type="button" (click)="addRegister()">Register</button>
+    <table id="t01">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Gender</th>
+                <th>Address</th>
+                <th>Zipcode</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody *ngFor="let data of registered; let i = index" [attr.data-index]="i">
+            <td>{{data.fullname}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.gender}}</td>
+            <td>{{data.street}}, {{data.city}}, {{data.state}}</td>
+            <td>{{data.zipcode}}</td>
+            <td class="action">
+                <button type="button" (click)="Edit(data)">Edit</button>
+            </td>
+        </tbody>
+    </table>
+</div>
