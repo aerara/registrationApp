@@ -2,22 +2,21 @@
     <div>
         <form (ngSubmit)="onSubmit(sampleForm)" #sampleForm="ngForm">
             <div class="card">
+                <h1><b>Registration Form</b></h1>
                 <article style="max-width: 400px;">
-                    <br>
-                    <h1><b>Registration Form</b></h1>
                     <p class="divider-text">
                         <span>Register</span>
                     </p>
                     <div>
-                        Name: <input class="form-control" required [(ngModel)]="info.fullname" name="fullname" #fullname="ngModel"
-                            type="text">
+                        Name: <input class="form-control" required [(ngModel)]="info.fullname" name="fullname"
+                            #fullname="ngModel" type="text">
                     </div>
                     <div *ngIf="fullname.invalid && (fullname.dirty || fullname.touched)" class="alert alert-danger">
                         <div *ngIf="fullname.errors.required">Name is required.</div>
                     </div>
                     <div>
-                        Email: <input class="form-control" [(ngModel)]="info.email" name=email #Email="ngModel" required
-                            pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" type="email">
+                        Email: <input class="form-control" [(ngModel)]="info.email" name=email #Email="ngModel"
+                            required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" type="email">
                     </div>
                     <div *ngIf="Email.invalid && (Email.dirty || Email.touched)" class="alert alert-danger">
                         <div *ngIf="Email.errors.required">Email is required.</div>
@@ -56,13 +55,13 @@
                         <div *ngIf="state.errors.required">Street is required.</div>
                     </div>
                     <div>
-                        Zipcode: <input class="form-control" required [(ngModel)]="info.zipcode" name="zipcode" #zipcode="ngModel"
-                            type="number">
+                        Zipcode: <input class="form-control" required [(ngModel)]="info.zipcode" name="zipcode"
+                            #zipcode="ngModel" type="number">
                     </div>
                     <div *ngIf="zipcode.invalid && (zipcode.dirty || zipcode.touched)" class="alert alert-danger">
                         <div *ngIf="zipcode.errors.required">Zipcode is required.</div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block" [disabled]="!sampleForm.form.valid">
+                    <button type="submit" [disabled]="!sampleForm.form.valid">
                         Submit</button>
                 </article>
             </div>

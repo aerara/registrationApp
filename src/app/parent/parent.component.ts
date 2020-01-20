@@ -10,6 +10,7 @@ export class ParentComponent implements OnInit {
   // public fullname: String;
   // public email: String;
   // public gender: String;
+  // counter: number = 0;
   public info: Info;
   public container: Array<Info>;
   registration: boolean = true;
@@ -24,6 +25,7 @@ export class ParentComponent implements OnInit {
   }
 
   onSubmit(info: any) {
+    alert("Successfull!")
     this.container.push(info.form.value)
     info.form.reset();
 

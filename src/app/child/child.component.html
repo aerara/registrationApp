@@ -3,22 +3,25 @@
     <table id="t01">
         <thead>
             <tr>
+                <th>ID</th>
                 <th>Name</th>
                 <th>Email</th>
                 <th>Gender</th>
                 <th>Address</th>
                 <th>Zipcode</th>
-                <th></th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody *ngFor="let data of registered; let i = index" [attr.data-index]="i">
+            <td>{{i + 1}}</td>
             <td>{{data.fullname}}</td>
             <td>{{data.email}}</td>
             <td>{{data.gender}}</td>
             <td>{{data.street}}, {{data.city}}, {{data.state}}</td>
             <td>{{data.zipcode}}</td>
             <td class="action">
-                <button type="button" (click)="Edit(data)">Edit</button>
+                <button id="editSection" type="button" (click)="Edit(data)">Edit</button>
+                <button id="deleteSection" type="button" (click)="delete(data)">Delete</button>
             </td>
         </tbody>
     </table>

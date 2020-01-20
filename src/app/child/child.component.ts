@@ -20,7 +20,16 @@ export class ChildComponent implements OnInit {
     this.edit.emit(info);
   }
 
-  addRegister(){
+  addRegister() {
     this.display.emit();
+  }
+
+  delete(dataToDelete) {
+    for (var i = 0; i < this.registered.length; i++) {
+      if (dataToDelete == this.registered[i]) {
+        this.registered.splice(i, 1);
+        alert("You have deleted your account successfully")
+      }
+    }
   }
 }

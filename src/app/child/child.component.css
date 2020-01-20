@@ -1,5 +1,7 @@
-table {
-  width:200%;
+table, .container {
+  width:100%;
+  /* text-align: center; */
+  /* layout-align: center center; */
 }
   
 table, th, td {
@@ -31,14 +33,13 @@ table#t01 th {
   text-align: center;
 }
 
-#addSection{
+#addSection, #editSection, #deleteSection{
   margin-top:100px;
   margin-bottom:10px;
-  width: 15%;
   background-color: #4CAF50;
   color: white;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 8px 2px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
