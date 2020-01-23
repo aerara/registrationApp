@@ -1,0 +1,8 @@
+<div class="container" *ngFor="let data of userInfo">
+    <h2>ID Number: {{ data.id }}</h2>
+    <p><b>Name: </b>{{ data.name }}</p>
+    <p><b>Email: </b>{{ data.email }}</p>
+    <p><b>Contact: </b>{{ data.phone }}</p>
+    <br>
+    <button type="button" [routerLink]="['/home']">Back to Homepage</button>
+</div>

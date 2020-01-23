@@ -6,6 +6,7 @@ import { Info } from '../Info';
   templateUrl: './child.component.html',
   styleUrls: ['./child.component.css']
 })
+
 export class ChildComponent implements OnInit {
   @Input() registered: Array<Info>;
   @Output() edit = new EventEmitter();

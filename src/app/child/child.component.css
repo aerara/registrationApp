@@ -33,10 +33,34 @@ table#t01 th {
   text-align: center;
 }
 
-#addSection, #editSection, #deleteSection{
+#addSection, #editSection, #errorSection{
   margin-top:100px;
   margin-bottom:10px;
   background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#deleteSection{
+  margin-top:100px;
+  margin-bottom:10px;
+  background-color: maroon;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 2px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#viewSection{
+  margin-top:100px;
+  margin-bottom:10px;
+  background-color: lightblue;
   color: white;
   padding: 14px 20px;
   margin: 8px 2px;
